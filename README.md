@@ -198,9 +198,21 @@ end_date: The end date of a date range to fetch APODs.
 count: The number of random APODs to fetch. 
 thumbs: Whether to include thumbnail URLs for video media types. 
 
-Example URL
-http://localhost:8080/apod?date=2024-02-04
+Example URLs
+ date  :- http://localhost:8080/apod?date=2024-02-04
 <img width="756" alt="Screenshot 2024-02-04 152957" src="https://github.com/bmanibala/Csu_Spring_NasaApi/assets/96670639/d2b185aa-5059-4d04-9eb2-de3327006134">
+
+count:-    http://localhost:8080/apod?count=2
+<img width="801" alt="Screenshot 2024-02-04 153024" src="https://github.com/bmanibala/Csu_Spring_NasaApi/assets/96670639/04d60c4e-e785-42c4-bb1b-01ea113b175c">
+
+start_date and end_date  http://localhost:8080/apod?start_date=2024-01-01&end_date=2024-01-10
+<img width="782" alt="Screenshot 2024-02-04 153319" src="https://github.com/bmanibala/Csu_Spring_NasaApi/assets/96670639/305a0541-cc4b-4fad-a094-bf071876101c">
+
+
+
+
+
+
 
 
 
