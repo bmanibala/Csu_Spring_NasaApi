@@ -186,6 +186,7 @@ Once the application is running, you can interact with the NASA APOD API through
 
 Get Astronomy Picture of the Day
 URL: http://localhost:8080/apod
+
 Method: GET
 
 
