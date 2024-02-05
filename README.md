@@ -178,6 +178,7 @@ public class SpringNasaApiApplication {
 application.properties:
 
 nasa.api.key=jlIBnISC6isURflerWnHJRAxHLvNTmCmzPFYL4To
+
 server.port=8080
 
 API Usage:
