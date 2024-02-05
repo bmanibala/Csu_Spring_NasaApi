@@ -1,12 +1,12 @@
 # Csu_Spring_NasaApi
 
-SpringNasa Api
+SpringNasa Api:-
 
 This Spring Boot application is designed to interact with NASA's Astronomy Picture of the Day (APOD) API. 
 It enables users to retrieve APOD (Astronomy Picture of the Day) data based on parameters such as date, start date, end date, count, and thumbs.
 
 
-Project Structure
+Project Structure:
 
 The project is organized into several packages, each serving a distinct role within the application:
 
@@ -15,7 +15,7 @@ com.example.SpringNasaApi.controller: Contains the REST controller that handles 
 com.example.SpringNasaApi.dto: Contains the Data Transfer Object (DTO) used to model the APOD response.
 com.example.SpringNasaApi.service: Contains the service class that handles the logic for fetching data from the NASA APOD API.
 
-Key Classes and Files
+Key Classes and Files:
 
 SpringNasaApiApplication.java: The main class that runs the Spring Boot application.
 NasaController.java: A REST controller class that defines endpoints for interacting with the NASA APOD API.
@@ -23,7 +23,7 @@ APODResponse.java: A DTO class that models the response received from the NASA A
 NasaService.java: A service class that contains the logic to call the NASA APOD API and process the response.
 
 
-NasaController
+NasaController:
 
 This class is a REST controller that handles HTTP requests to the /apod endpoint. It uses the @RestController annotation, indicating that it's a controller where every method returns a domain object instead of a view. It's designed to handle the web requests for fetching APOD data.
 
@@ -48,7 +48,7 @@ public class NasaController {
     }
 }
 
-APODResponse
+APODResponse:
 
 This class serves as a Data Transfer Object (DTO) for the APOD data. It defines the structure of the data that the application will send to and receive from clients. It includes fields for date, explanation, url, title, mediaType, and thumbnailUrl, along with their getters and setters.
 
@@ -115,7 +115,7 @@ public class APODResponse {
     }
 }
 
-NasaService
+NasaService:
 
 This class is annotated with @Service, indicating it's a Spring-managed service class. 
 It is  responsible for the business logic to fetch APOD data from NASA's APOD API.
@@ -161,7 +161,7 @@ public class NasaService {
     }
 }
 
-SpringNasaApiApplication
+SpringNasaApiApplication:
 
 This is the entry point of the Spring Boot application. 
 It contains the main method that launches the application using SpringApplication.run
@@ -199,7 +199,7 @@ end_date: The end date of a date range to fetch APODs.
 count: The number of random APODs to fetch. 
 thumbs: Whether to include thumbnail URLs for video media types. 
 
-Example URLs
+Example URLs:
  date  :- http://localhost:8080/apod?date=2024-02-04
 <img width="756" alt="Screenshot 2024-02-04 152957" src="https://github.com/bmanibala/Csu_Spring_NasaApi/assets/96670639/d2b185aa-5059-4d04-9eb2-de3327006134">
 
