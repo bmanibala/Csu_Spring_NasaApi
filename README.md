@@ -175,12 +175,12 @@ public class SpringNasaApiApplication {
 
 }
 
-application.properties
+application.properties:
 
 nasa.api.key=jlIBnISC6isURflerWnHJRAxHLvNTmCmzPFYL4To
 server.port=8080
 
-API Usage
+API Usage:
 
 Once the application is running, you can interact with the NASA APOD API through the provided endpoint:
 
