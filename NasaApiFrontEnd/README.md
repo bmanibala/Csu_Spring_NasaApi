@@ -6,8 +6,11 @@ This is a React application designed to interact with NASA's Astronomy Picture o
 # Features :
 
 1.View Daily Picture: Display NASA's Astronomy Picture of the Day.
+
 2.Date Selection: Users can fetch and view the picture for a selected date.
+
 3.Date Range Selection: Retrieve and display images from a specified date range.
+
 4.Count of Images: Fetch and display a specified number of random pictures.
 
 # Getting Started:-
