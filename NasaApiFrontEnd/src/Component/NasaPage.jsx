@@ -36,7 +36,7 @@ function NasaPage() {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      setImages(Array.isArray(data) ? data : [data]); // Ensure we always work with an array
+      setImages(Array.isArray(data) ? data : [data]); 
     } catch (error) {
       console.error('Failed to fetch data from NASA API', error);
     }

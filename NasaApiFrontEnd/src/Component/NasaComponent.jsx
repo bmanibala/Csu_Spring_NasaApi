@@ -21,7 +21,7 @@ const NasaComponent = () => {
     };
  
     fetchData();
-  }, []); // Empty dependency array to run the effect only once on component mount
+  }, []); 
  
   if (loading) {
     return <p>Loading...</p>;
