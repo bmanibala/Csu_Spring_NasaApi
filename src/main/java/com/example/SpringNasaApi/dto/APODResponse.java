@@ -9,7 +9,7 @@ public class APODResponse {
     private String mediaType; // "image" or "video"
     private String thumbnailUrl; // Useful if mediaType is "video" and thumbs=true
 
-    // Constructors
+    // Constructor
     public APODResponse() {
     }
 

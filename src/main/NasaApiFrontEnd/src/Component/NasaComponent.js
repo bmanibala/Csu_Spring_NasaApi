@@ -1,5 +1,5 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
- 
 const NasaComponent = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -8,8 +8,8 @@ const NasaComponent = () => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/apod')
-       
+        //const response = await fetch('http://localhost:8080/apod')
+        const response = await axios.get('/apod')
         ;
         const result = await response.json();
         setData(result);

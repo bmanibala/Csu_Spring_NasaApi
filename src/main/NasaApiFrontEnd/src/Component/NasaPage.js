@@ -21,7 +21,7 @@ function NasaPage() {
 
   const fetchImages = async () => {
     const apiKey = 'YOUR_NASA_API_KEY'; 
-    let url = `http://localhost:8080/apod?api_key=${apiKey}&`;
+    let url = `https://api.nasa.gov/planetary/apod?api_key==${apiKey}&`;
 
     if (inputs.date) {
       url += `date=${inputs.date}`;

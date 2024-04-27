@@ -2,32 +2,48 @@ const path = require('path');
 const loader = require('sass-loader');
 
 module.exports = {
+    entry: './src/index.js',
+    devtool: 'eval-source-map',
+    cache: true,
+    mode: 'development',
     output:{
-        path: path.join (__dirname, '/dist'),
-        filename: "index.bundle.js",
+        path: __dirname,
+        filename: '../resources/static/built/index.bundle.js'
     },
-    devServer: {
-        port: 3000,
-    },
+    resolve: {
+        alias: {
+          // Correct alias configurations
+          Browser: path.resolve(__dirname, 'src/browser/')
+        }
+      },
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader'
-                }
+                test: path.join(__dirname, '.'),
+                exclude: /(node_modules)/,
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ["@babel/preset-env", "@babel/preset-react"]
+                    }
+                }]
             },
             {
-                test: /\.(scss|css)$/,
+                test: /\.(css|scss)$/,
                 use: [
                     'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ],
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif|eot|otf|ttf|woff|woff2)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {}
+                    }
+                ]
             }
         ]
     }
-
-
 };
