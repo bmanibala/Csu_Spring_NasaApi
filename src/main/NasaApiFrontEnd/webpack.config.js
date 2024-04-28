@@ -1,5 +1,4 @@
 const path = require('path');
-const loader = require('sass-loader');
 
 module.exports = {
     entry: './src/index.js',
@@ -10,12 +9,6 @@ module.exports = {
         path: __dirname,
         filename: '../resources/static/built/index.bundle.js'
     },
-    resolve: {
-        alias: {
-          // Correct alias configurations
-          Browser: path.resolve(__dirname, 'src/browser/')
-        }
-      },
     module: {
         rules: [
             {

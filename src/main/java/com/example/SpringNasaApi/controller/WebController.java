@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class WebController {
-    @RequestMapping(value = { "/", "/NasaPage", "NasaComponent" })
+    @RequestMapping(value = { "/", "/nasa" })
     public String index() {
         return "index";
     }

@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useStore from './usestore';
 
 function NasaPage() {
-  const [inputs, setInputs] = useState({
-    date: '',
-    fromDate: '',
-    toDate: '',
-    count: 1,
-  });
-  const [images, setImages] = useState([]);
+  const { inputs, images, setInputs, setImages } = useStore(state => ({
+    inputs: state.inputs,
+    images: state.images,
+    setInputs: state.setInputs,
+    setImages: state.setImages,
+  }));
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setInputs(prev => ({ ...prev, [name]: value }));
+    setInputs(name, value);
   };
 
   const handleSubmit = (e) => {
@@ -20,31 +20,29 @@ function NasaPage() {
   };
 
   const fetchImages = async () => {
-    const apiKey = 'YOUR_NASA_API_KEY'; 
-    let url = `https://api.nasa.gov/planetary/apod?api_key==${apiKey}&`;
+    const apiKey = 'jlIBnISC6isURflerWnHJRAxHLvNTmCmzPFYL4To';
+    let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
     if (inputs.date) {
-      url += `date=${inputs.date}`;
+      url += `&date=${inputs.date}`;
     } else if (inputs.fromDate && inputs.toDate) {
-      url += `start_date=${inputs.fromDate}&end_date=${inputs.toDate}`;
+      url += `&start_date=${inputs.fromDate}&end_date=${inputs.toDate}`;
     }
 
     if (inputs.count) {
       url += `&count=${inputs.count}`;
     }
 
+    console.log('Fetching images with URL:', url);
+
     try {
       const response = await fetch(url);
       const data = await response.json();
-      setImages(Array.isArray(data) ? data : [data]); 
+      setImages(Array.isArray(data) ? data : [data]);
     } catch (error) {
       console.error('Failed to fetch data from NASA API', error);
     }
   };
-
-  useEffect(() => {
-    fetchImages();
-  }, []);
 
   return (
     <div>
